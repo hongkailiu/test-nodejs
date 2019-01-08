@@ -31,4 +31,8 @@ export class AppComponent {
     }
   }
 
+  onNavigate(urlString: string) {
+    window.open(urlString, "_blank");
+  }
+
 }

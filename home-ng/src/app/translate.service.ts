@@ -10,7 +10,7 @@ export class TranslateService {
 
   selectedLang = 'en';
 
-  getSelectedLang(): String {
+  getSelectedLang(): string {
     return this.selectedLang
   }
 
