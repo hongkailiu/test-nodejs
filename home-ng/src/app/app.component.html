@@ -1,3 +1,108 @@
-<div class="page-header">
-  <h1 id="h1_homepage">{{ title }}</h1>
+<a href="https://github.com/hongkailiu/hongkailiu.github.io.git"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+
+<div class="wrapper">
+  <div class="container">
+    <div class="page-header">
+      <h1 id="h1_homepage">{{ 'title' | translate }}</h1>
+    </div>
+
+  <div class="row">  
+  <div class="col-md-12">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home">{{ 'a_home' | translate }}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu1">{{ 'a_contact' | translate }}</a>
+    </li>
+    <li class="nav-item ml-auto">
+        <img id="img_lang" src={{imgLangSrc}} alt="" style="width: 80%;margin-right: 0px;padding:0px;cursor: pointer;" onmouseover="" (click)="this.selectLang()"/>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+      <h2>{{ 'h2_you_know' | translate }}</h2>
+      <div id="d_place">
+          <span id="s_mtl">{{ 's_mtl' | translate }}</span> &#8592;
+          <span id="s_bj">{{ 's_bj' | translate }}</span> &#8592;
+          <span id="s_dd">{{ 's_dd' | translate }}</span> &#8592;
+          <span id="s_as">{{ 's_as' | translate }}</span>
+      </div>
+    
+    <div id="d_place_map"><a target="_blank" href="assets/i/place-map.png"><img src="assets/i/place-map.png" style="width: 600px;padding: 6px;"/></a></div>
+    <div> <a href="assets/file/resume.pdf" id="a_resume">{{ 'a_resume' | translate }}</a>,  
+          <a href="assets/file/publication.pdf" id="a_pub">{{ 'a_pub' | translate }}</a>
+    </div>
+		<div> <img class="imgsocial" alt="github-icon" src="assets/i/github-icon.png"/>
+					<button type="button" class="btn btn-link btn-xs" id="btn_github">{{ 'btn_github' | translate }}</button>
+    </div>
+  </div>
+
+    <div id="menu1" class="container tab-pane fade"><br>
+      <h2>{{ 'h2_w_t_f_m' | translate }}</h2>
+      <ul class="list-unstyled">
+          <li><img class="imagemail" src="assets/i/gmail.png" alt="gmail" /></li>
+          <li>
+            <img class="imgsocial" alt="qzone-icon" src="assets/i/qzone-icon.png" />
+            <button type="button" class="btn btn-link btn-xs" id="btn_qzone">{{ 'btn_qzone' | translate }}</button>
+          </li>
+
+          <li>
+            <img class="imgsocial" alt="weibo-icon" src="assets/i/weibo-icon.png" />
+            <button type="button" class="btn btn-link btn-xs" id="btn_weibo">{{ 'btn_weibo' | translate }}</button>
+          </li>
+
+          <li>
+            <img class="imgsocial" alt="wechat-icon" src="assets/i/wechat-icon.png" />
+            <button type="button" class="btn btn-link btn-xs" id="btn_wechat">{{ 'btn_wechat' | translate }}</button>
+          </li>
+        </ul>
+      <h2>{{ 'h2_m' | translate }}</h2>
+      <ul class="list-unstyled">
+						
+          <li>
+            <img class="imgsocial" alt="linkedin-icon" src="assets/i/linkedin-icon.png" />
+            <button type="button" class="btn btn-link btn-xs" id="btn_linkedin">{{ 'btn_linkedin' | translate }}</button>
+          </li>
+
+          <li>
+            <img class="imgsocial" alt="facebook-icon" src="assets/i/facebook-icon.png" />
+            <button type="button" class="btn btn-link btn-xs" id="btn_facebook">{{ 'btn_facebook' | translate }}</button>
+          </li>
+
+          <li>
+            <img class="imgsocial" alt="twitter-icon" src="assets/i/twitter-icon.png" />
+            <button type="button" class="btn btn-link btn-xs" id="btn_twitter">{{ 'btn_twitter' | translate }}</button>
+          </li>
+        </ul>
+    </div>
+  </div>
+
+  </div>
+  </div>
+  </div>
 </div>
+
+<footer>
+		<p class="text-center">
+		<span><small>Last modified: Mar. 23, 2015</small></span>
+		<span><img src="http://counter8.allfreecounter.com/private/freecounterstat.php?c=c1f30b8a3383ddaf9db9be2311bfde48" border="0" title="hit counter" alt="hit counter"></span>
+		<span><small>Hosted on <a href="https://github.com/hongkailiu/hongkailiu.github.io" id="a_hostedOn">GitHub</a></small></span>
+		<!--
+		<span>Copyright &copy; 2015 Hongkai Liu</span>
+		
+		<span><a
+				href="http://validator.w3.org/check?uri=referer"><img
+				    src="http://www.w3.org/Icons/valid-xhtml11"
+					alt="Valid XHTML 1.1" height="31" width="88" /></a></span>&#160;<span><a
+				href="http://jigsaw.w3.org/css-validator/check/referer"><img
+					style="border: 0; width: 88px; height: 31px"
+					src="http://jigsaw.w3.org/css-validator/images/vcss"
+					alt="Valid CSS!" /></a></span>
+				-->
+		</p>
+		
+	</footer>

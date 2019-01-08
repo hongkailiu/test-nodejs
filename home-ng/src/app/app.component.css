@@ -1,0 +1,20 @@
+footer{
+    height: 30px; 
+    width:100%;
+    position: absolute;
+    left: 0;
+    bottom: 0; 
+}
+
+.imgsocial {
+    padding: 3px;
+    border: 0;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.imagemail {
+    padding: 3px;
+    border: 0;
+}
