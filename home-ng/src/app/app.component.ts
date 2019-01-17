@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from './translate.service';
+import { BUILD_ENVIRONMENT } from './build.environment';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,9 @@ import { TranslateService } from './translate.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Hongkai Liu\u2019s Homepage';
+  //title = 'Hongkai Liu\u2019s Homepage';
   imgLangSrc = "assets/i/china-icon.png";
+  buildLine = "Version " + BUILD_ENVIRONMENT.version + " built at " + BUILD_ENVIRONMENT.time;
 
   constructor(private translate: TranslateService) {
     //translate.use('en').then(() => {
