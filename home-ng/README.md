@@ -18,6 +18,7 @@ Generate build into docs folder:
 
 ```
 $ cd ./test-nodejs/home-ng
+$ npm run build-prod
 $ ng build --prod --output-path docs
 
 ```
