@@ -16,8 +16,16 @@
     <li class="nav-item">
       <a class="nav-link" data-toggle="tab" href="#menu1">{{ 'a_contact' | translate }}</a>
     </li>
-    <li class="nav-item ml-auto">
-        <img id="img_lang" src={{imgLangSrc}} alt="" style="width: 80%;margin-right: 0px;padding:0px;cursor: pointer;" onmouseover="" (click)="this.selectLang()"/>
+    
+    <li class="nav-item dropdown ml-auto">
+      <div class="nav-link dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;">{{ divLangText }}</div>
+      <div class="dropdown-menu">
+        <div class="dropdown-item" style="cursor: pointer;" (click)="selectLang('en')">{{ english }}</div>
+        <div class="dropdown-item" style="cursor: pointer;" (click)="selectLang('zh')">{{ chinese }}</div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <img id="img_lang" src={{imgLangSrc}} alt="" style="width: 80%;margin-right: 0px;padding:0px;"/>
     </li>
   </ul>
 
@@ -32,7 +40,7 @@
           <span id="s_as">{{ 's_as' | translate }}</span>
       </div>
     
-    <div id="d_place_map"><a target="_blank" href="assets/i/place-map.png"><img src="assets/i/place-map.png" style="width: 600px;padding: 6px;"/></a></div>
+    <div id="d_place_map"><a target="_blank" href="assets/i/place-map.png"><img src="assets/i/place-map.png" style="width: 66%;padding: 6px;"/></a></div>
     <div> <a href="assets/file/resume.pdf" id="a_resume">{{ 'a_resume' | translate }}</a>,  
           <a href="assets/file/publication.pdf" id="a_pub">{{ 'a_pub' | translate }}</a>
     </div>

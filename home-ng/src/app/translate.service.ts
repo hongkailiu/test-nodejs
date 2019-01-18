@@ -8,15 +8,8 @@ export class TranslateService {
   data: any = {};
   constructor(private http: HttpClient) { }
 
-  selectedLang = 'en';
-
-  getSelectedLang(): string {
-    return this.selectedLang
-  }
-
   use(lang: string): Promise<{}> {
     return new Promise<{}>((resolve, reject) => {
-      this.selectedLang = `${lang || 'en'}`;
       const langPath = `assets/i18n/${lang || 'en'}.json`;
       this.http.get<{}>(langPath).subscribe(
         translation => {

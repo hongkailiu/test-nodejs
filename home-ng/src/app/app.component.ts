@@ -9,7 +9,15 @@ import { BUILD_ENVIRONMENT } from './build.environment';
 })
 export class AppComponent {
   //title = 'Hongkai Liu\u2019s Homepage';
-  imgLangSrc = "assets/i/china-icon.png";
+
+  english = 'English';
+  chinese = '中文 Chinese'
+
+  ukIcon = "assets/i/uk-icon.png";
+  zhIcon = "assets/i/china-icon.png";
+
+  divLangText = this.english;
+  imgLangSrc = this.ukIcon;
   buildLine = "Version " + BUILD_ENVIRONMENT.version + " built at " + BUILD_ENVIRONMENT.time;
 
   constructor(private translate: TranslateService) {
@@ -18,18 +26,20 @@ export class AppComponent {
     //});
   }
 
-  selectLang() {
-    switch(this.translate.selectedLang) {
+  selectLang(lang: string) {
+    switch (lang) {
       case 'en':
-        this.imgLangSrc = "assets/i/uk-icon.png";
-        this.translate.use('zh');
+        this.imgLangSrc = this.ukIcon;
+        this.divLangText = this.english;
+        this.translate.use('en');
         break;
       case 'zh':
-        this.imgLangSrc = "assets/i/china-icon.png";
-        this.translate.use('en')
+        this.imgLangSrc = this.zhIcon;
+        this.divLangText = this.chinese;
+        this.translate.use('zh');
         break;
       default:
-        console.error('unsupported langauge is selected: ' + this.translate.selectedLang);
+        console.error('unsupported language is selected: ' + lang);
     }
   }
 
