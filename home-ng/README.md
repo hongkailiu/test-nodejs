@@ -17,7 +17,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 Generate build into docs folder:
 
 ```
-$ cd ./test-nodejs/home-ng
+$ cd ./home-ng
 $ npm run build-prod
 $ ng build --prod --output-path docs
 
