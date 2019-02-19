@@ -16,6 +16,7 @@ build:
 .PHONY : pre-release
 pre-release:
 	rm -rfv /tmp/hongkailiu.github.io/*
+	git clone https://github.com/hongkailiu/hongkailiu.github.io.git /tmp/hongkailiu.github.io
 	cp -r ./docs/* /tmp/hongkailiu.github.io/
 	git -C /tmp/hongkailiu.github.io/ checkout README.md
 	git -C /tmp/hongkailiu.github.io/ checkout CNAME
