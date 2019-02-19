@@ -7,6 +7,7 @@ node_js:
 
 before_script:
   - npm --version
+  - npm install -g @angular/cli
   - ng --version
 
 script:
