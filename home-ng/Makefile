@@ -26,3 +26,8 @@ pre-release:
 	$(eval COMMIT_MSG := "$(shell git log --oneline -1)")
 	git -C /tmp/hongkailiu.github.io/ commit -m $(COMMIT_MSG)
 	git -C /tmp/hongkailiu.github.io/ log -2
+
+### release
+.PHONY : release
+release:
+	git -C /tmp/hongkailiu.github.io/ push
