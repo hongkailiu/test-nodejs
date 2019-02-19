@@ -10,6 +10,7 @@ before_script:
   - npm install -g @angular/cli
   - ng --version
   - npm install -C ./home-ng/
+  - git diff
 
 script:
   - make -C ./home-ng/ test build
