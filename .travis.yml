@@ -9,6 +9,7 @@ before_script:
   - npm --version
   - npm install -g @angular/cli
   - ng --version
+  - npm install -C ./home-ng/
 
 script:
-  - true
+  - make -C ./home-ng/ build-home
