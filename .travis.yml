@@ -12,4 +12,5 @@ before_script:
   - npm install -C ./home-ng/
 
 script:
-  - make -C ./home-ng/ build-home
+  - make -C ./home-ng/ test build
+  - make -C ./home-ng/ pre-release
