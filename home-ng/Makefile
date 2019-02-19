@@ -1,5 +1,3 @@
-COMMIT_MSG := "$(shell git log --oneline -1)"
-
 ###
 .PHONY : test
 test:
@@ -25,5 +23,6 @@ pre-release:
 	git -C /tmp/hongkailiu.github.io/ checkout CNAME
 	git -C /tmp/hongkailiu.github.io/ add .
 	git -C /tmp/hongkailiu.github.io/ status
+	$(eval COMMIT_MSG := "$(shell git log --oneline -1)")
 	git -C /tmp/hongkailiu.github.io/ commit -m $(COMMIT_MSG)
 	git -C /tmp/hongkailiu.github.io/ log -2
