@@ -7,6 +7,8 @@ test:
 ### build application
 .PHONY : build
 build:
+	###https://stackoverflow.com/questions/45022048/why-does-npm-install-rewrite-package-lock-json
+  	npm ci
 	rm -rfv ./docs
 	npm run build-prod
 	ng build --prod --output-path docs
