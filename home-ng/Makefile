@@ -22,6 +22,8 @@ pre-release:
 	git -C /tmp/hongkailiu.github.io/ checkout CNAME
 	git -C /tmp/hongkailiu.github.io/ add .
 	git -C /tmp/hongkailiu.github.io/ status
+	git log --oneline -1
+	echo "=$(git log --oneline -1)="
 	git -C /tmp/hongkailiu.github.io/ commit -m "$(git log --oneline -1)"
 	git -C /tmp/hongkailiu.github.io/ log
 	git -C /tmp/hongkailiu.github.io/ show

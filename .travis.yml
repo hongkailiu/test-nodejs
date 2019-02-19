@@ -9,6 +9,7 @@ before_script:
   - npm --version
   - npm install -g @angular/cli
   - ng --version
+  ###https://stackoverflow.com/questions/45022048/why-does-npm-install-rewrite-package-lock-json
   - npm ci -C ./home-ng/
   - git diff
 
