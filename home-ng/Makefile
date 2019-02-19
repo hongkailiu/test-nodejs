@@ -1,3 +1,5 @@
+COMMIT_MSG := "$(shell git log --oneline -1)"
+
 ###
 .PHONY : test
 test:
@@ -16,15 +18,12 @@ build:
 ### checking diff before release
 .PHONY : pre-release
 pre-release:
-	rm -rfv /tmp/hongkailiu.github.io/*
+	rm -rfv /tmp/hongkailiu.github.io/
 	git clone https://github.com/hongkailiu/hongkailiu.github.io.git /tmp/hongkailiu.github.io
 	cp -r ./docs/* /tmp/hongkailiu.github.io/
 	git -C /tmp/hongkailiu.github.io/ checkout README.md
 	git -C /tmp/hongkailiu.github.io/ checkout CNAME
 	git -C /tmp/hongkailiu.github.io/ add .
 	git -C /tmp/hongkailiu.github.io/ status
-	git log --oneline -1
-	echo "=$(git log --oneline -1)="
-	git -C /tmp/hongkailiu.github.io/ commit -m "$(git log --oneline -1)"
-	git -C /tmp/hongkailiu.github.io/ log
-	git -C /tmp/hongkailiu.github.io/ show
+	git -C /tmp/hongkailiu.github.io/ commit -m $(COMMIT_MSG)
+	git -C /tmp/hongkailiu.github.io/ log -2
