@@ -9,7 +9,7 @@ before_script:
   - npm --version
   - npm install -g @angular/cli
   - ng --version
-  - npm install -C ./home-ng/
+  - npm ci -C ./home-ng/
   - git diff
 
 script:
