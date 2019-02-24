@@ -38,6 +38,7 @@ ci-install:
 	### circle ci requirement
 	### https://circleci.com/docs/2.0/language-javascript/
 	sudo npm install -g @angular/cli
+	echo "PATH: $${PATH}"
 	ng --version
 
 .PHONY : ci-all
