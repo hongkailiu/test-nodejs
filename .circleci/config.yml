@@ -9,7 +9,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: update-npm
+          name: ci-all
           command: 'make -C ./home-ng/ ci-all'
   build-node-11:
     working_directory: ~/mern-starter
@@ -18,7 +18,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: update-npm
+          name: ci-all
           command: 'make -C ./home-ng/ ci-all'
 
 workflows:

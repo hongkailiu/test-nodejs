@@ -33,7 +33,7 @@ release:
 	git -C /tmp/hongkailiu.github.io/ push
 
 .PHONY : ci-install
-install:
+ci-install:
 	npm --version
 	### circle ci requirement
 	### https://circleci.com/docs/2.0/language-javascript/
