@@ -31,3 +31,12 @@ pre-release:
 .PHONY : release
 release:
 	git -C /tmp/hongkailiu.github.io/ push
+
+.PHONY : install
+install:
+	npm --version
+	npm install -g @angular/cli
+	ng --version
+
+.PHONY : ci-all
+ci-all: install test build pre-prelease
