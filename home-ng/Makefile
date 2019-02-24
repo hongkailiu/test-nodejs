@@ -35,11 +35,7 @@ release:
 .PHONY : ci-install
 ci-install:
 	npm --version
-	### circle ci requirement
-	### https://circleci.com/docs/2.0/language-javascript/
-	sudo npm install -g @angular/cli
-	echo "PATH: $${PATH}"
-	/usr/local/bin/ng --version
+	npm install @angular/cli
 	ng --version
 
 .PHONY : ci-all
