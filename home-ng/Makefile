@@ -32,11 +32,13 @@ pre-release:
 release:
 	git -C /tmp/hongkailiu.github.io/ push
 
-.PHONY : install
+.PHONY : ci-install
 install:
 	npm --version
-	npm install -g @angular/cli
+	### circle ci requirement
+	### https://circleci.com/docs/2.0/language-javascript/
+	sudo npm install -g @angular/cli
 	ng --version
 
 .PHONY : ci-all
-ci-all: install test build pre-prelease
+ci-all: ci-install test build pre-prelease
