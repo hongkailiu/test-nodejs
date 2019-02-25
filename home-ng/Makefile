@@ -48,4 +48,4 @@ circle-ci-install:
 	ng --version
 
 .PHONY : circle-ci-all
-circle-ci-all: circle-install test build pre-release
+circle-ci-all: circle-ci-install test build pre-release
