@@ -32,10 +32,11 @@ pre-release:
 release:
 	git -C /tmp/hongkailiu.github.io/ push
 
-.PHONY : ci-install
-ci-install:
+.PHONY : circle-install
+circle-install:
 	node --version
 	npm --version
+	### need to have this folder in circle-ci env.
 	mkdir ./node_modules
 	### circle ci requirement
 	### https://circleci.com/docs/2.0/language-javascript/
@@ -43,4 +44,4 @@ ci-install:
 	ng --version
 
 .PHONY : ci-all
-ci-all: ci-install test build pre-release
+ci-all: circle-install test build pre-release
