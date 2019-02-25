@@ -36,13 +36,10 @@ release:
 ci-install:
 	node --version
 	npm --version
-	yarn --version
-	npm ci
+	mkdir ./node_modules
 	### circle ci requirement
 	### https://circleci.com/docs/2.0/language-javascript/
 	sudo npm install -g @angular/cli
-	echo "PATH: $${PATH}"
-	ls -al /usr/local/bin/ng
 	ng --version
 
 .PHONY : ci-all
