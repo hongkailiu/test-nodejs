@@ -43,4 +43,4 @@ ci-install:
 	ng --version
 
 .PHONY : ci-all
-ci-all: ci-install test build pre-prelease
+ci-all: ci-install test build pre-release
