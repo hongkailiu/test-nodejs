@@ -24,7 +24,7 @@ pre-release:
 	git -C /tmp/hongkailiu.github.io/ add .
 	git -C /tmp/hongkailiu.github.io/ status
 	$(eval COMMIT_MSG := "$(shell git log --oneline -1)")
-	@ if [[ "${${CIRCLECI}}" == "true" ]]; then \
+	@ if [ "${${CIRCLECI}}" == "true" ]; then \
         git -C /tmp/hongkailiu.github.io/ config user.name "${CIRCLE_USERNAME}"; \
 		git -C /tmp/hongkailiu.github.io/ config user.email "${CIRCLE_USERNAME}@users.noreply.github.com"; \
     fi
