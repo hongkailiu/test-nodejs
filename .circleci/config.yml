@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run:
           name: ci-all
-          command: 'make -C ./home-ng/ ci-all'
+          command: 'make CIRCLE_USERNAME=${CIRCLE_USERNAME} -C ./home-ng/ ci-all'
   build-node-11:
     working_directory: ~/my-project
     docker:
@@ -19,7 +19,7 @@ jobs:
       - checkout
       - run:
           name: ci-all
-          command: 'make -C ./home-ng/ ci-all'
+          command: 'make CIRCLE_USERNAME=${CIRCLE_USERNAME} -C ./home-ng/ ci-all'
 
 workflows:
   version: 2
