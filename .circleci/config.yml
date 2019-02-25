@@ -2,7 +2,7 @@
 version: 2
 jobs:
   build-node-10:
-    ###working_directory: ~/mern-starter
+    working_directory: ~/my-project
     docker:
       ###https://github.com/CircleCI-Public/circleci-dockerfiles/tree/master/node/images
       - image: circleci/node:10.15.1-jessie
@@ -12,7 +12,7 @@ jobs:
           name: ci-all
           command: 'make -C ./home-ng/ ci-all'
   build-node-11:
-    working_directory: ~/mern-starter
+    working_directory: ~/my-project
     docker:
       - image: circleci/node:11.10.0-stretch
     steps:
