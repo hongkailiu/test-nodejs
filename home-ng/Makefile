@@ -25,8 +25,8 @@ pre-release:
 	git -C /tmp/hongkailiu.github.io/ status
 	$(eval COMMIT_MSG := "$(shell git log --oneline -1)")
 	@ if [[ "${${CIRCLECI}}" == "true" ]]; then \
-        git -C /tmp/hongkailiu.github.io/ config user.name "${CIRCLE_USERNAME}"
-		git -C /tmp/hongkailiu.github.io/ config user.email "${CIRCLE_USERNAME}@users.noreply.github.com"
+        git -C /tmp/hongkailiu.github.io/ config user.name "${CIRCLE_USERNAME}"; \
+		git -C /tmp/hongkailiu.github.io/ config user.email "${CIRCLE_USERNAME}@users.noreply.github.com"; \
     fi
 	git -C /tmp/hongkailiu.github.io/ commit -m $(COMMIT_MSG)
 	git -C /tmp/hongkailiu.github.io/ log -2
@@ -36,16 +36,16 @@ pre-release:
 release:
 	git -C /tmp/hongkailiu.github.io/ push
 
-.PHONY : circle-install
-circle-install:
+.PHONY : circle-ci-install
+circle-ci-install:
 	node --version
 	npm --version
 	### need to have this folder in circle-ci env.
-	mkdir ./node_modules
+	mkdir -p ./node_modules
 	### circle ci requirement
 	### https://circleci.com/docs/2.0/language-javascript/
 	sudo npm install -g @angular/cli
 	ng --version
 
-.PHONY : ci-all
-ci-all: circle-install test build pre-release
+.PHONY : circle-ci-all
+circle-ci-all: circle-install test build pre-release
