@@ -37,6 +37,7 @@ ci-install:
 	node --version
 	npm --version
 	yarn --version
+	npm ci
 	### circle ci requirement
 	### https://circleci.com/docs/2.0/language-javascript/
 	sudo npm install -g @angular/cli
