@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run:
           name: circle-ci-all
-          command: "make -C ./home-ng/ circle-ci-all"
+          command: "make CIRCLECI=${CIRCLECI} -C ./home-ng/ circle-ci-all"
   build-node-11:
     working_directory: ~/my-project
     docker:
@@ -19,7 +19,7 @@ jobs:
       - checkout
       - run:
           name: circle-ci-all
-          command: "make -C ./home-ng/ circle-ci-all"
+          command: "make CIRCLECI=${CIRCLECI} -C ./home-ng/ circle-ci-all"
 
 workflows:
   version: 2

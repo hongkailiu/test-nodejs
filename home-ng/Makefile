@@ -34,6 +34,7 @@ release:
 
 .PHONY : circle-ci-install
 circle-ci-install:
+	./circle_ci_check.sh
 	make --version
 	git --version
 	node --version
