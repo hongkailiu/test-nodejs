@@ -1,34 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { HttpClientModule } from '@angular/common/http';
-import { TranslateService } from './translate.service';
-import { TranslatePipe } from './translate.pipe';
-
-export function setupTranslateFactory(
-  service: TranslateService): Function {
-  return () => service.use('en');
-}
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TranslatePipe
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    AppRoutingModule
   ],
-  providers: [TranslateService,
-    {
-      provide: APP_INITIALIZER,
-      useFactory: setupTranslateFactory,
-      deps: [ TranslateService ],
-      multi: true
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
