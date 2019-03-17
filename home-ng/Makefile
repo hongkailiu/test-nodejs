@@ -21,7 +21,7 @@ pre-release:
 ### release
 .PHONY : release
 release:
-	git -C /tmp/hongkailiu.github.io/ push
+	git -C /tmp/hongkailiu.github.io-local/ push
 
 .PHONY : circle-ci-install
 circle-ci-install:
