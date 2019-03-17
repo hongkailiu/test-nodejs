@@ -9,6 +9,10 @@ export class TabsetComponent implements OnInit {
 
   constructor() { }
 
+  openBlank(url: string){
+    window.open(url, "_blank");
+  }
+
   ngOnInit() {
   }
 
