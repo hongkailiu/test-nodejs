@@ -11,6 +11,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { TabsetComponent } from './tabset/tabset.component';
 
+import {TestModule} from './test/test.module';
+
 export function setupTranslateFactory(
   service: TranslateService): Function {
   return () => service.use('en');
@@ -27,7 +29,8 @@ export function setupTranslateFactory(
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    TestModule
   ],
   providers: [TranslateService,
     {
