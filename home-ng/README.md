@@ -1,5 +1,9 @@
 # HomeNg
 
+[![Build Status](https://travis-ci.org/hongkailiu/test-nodejs.svg?branch=master)](https://travis-ci.org/hongkailiu/test-nodejs)
+
+On [travis-ci](https://travis-ci.org/hongkailiu/test-nodejs), use [Makefile](Makefile) to test, build, etc.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.2.
 
 ## Development server
