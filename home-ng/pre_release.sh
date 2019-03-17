@@ -26,7 +26,14 @@ cp -rv ./docs/* "${TARGET_FOLDER}"
 git -C "${TARGET_FOLDER}" checkout README.md
 git -C "${TARGET_FOLDER}" checkout CNAME
 git -C "${TARGET_FOLDER}" add .
-git -C "${TARGET_FOLDER}" status
+readonly STATUS="$(git -C "${TARGET_FOLDER}" status)"
+echo "${STATUS}"
+
+if [[ "${STATUS}" == *"nothing to commit"* ]]; then
+  echo "exiting ... nothing to commit"
+  exit 0
+fi
+
 #$(eval COMMIT_MSG := "$(shell git log --oneline -1)")
 readonly COMMIT_MSG="$(git log --oneline -1)"
 git -C "${TARGET_FOLDER}" commit -m "${COMMIT_MSG}"
