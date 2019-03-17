@@ -1,6 +1,7 @@
 # HomeNg
 
 [![Build Status](https://travis-ci.org/hongkailiu/test-nodejs.svg?branch=master)](https://travis-ci.org/hongkailiu/test-nodejs)
+[![CircleCI](https://circleci.com/gh/hongkailiu/test-nodejs.svg?style=svg)](https://circleci.com/gh/hongkailiu/test-nodejs)
 
 On [travis-ci](https://travis-ci.org/hongkailiu/test-nodejs), use [Makefile](Makefile) to test, build, etc.
 
