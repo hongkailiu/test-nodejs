@@ -1,10 +1,11 @@
 # HomeNg
 
 [![Build Status](https://travis-ci.org/hongkailiu/test-nodejs.svg?branch=master)](https://travis-ci.org/hongkailiu/test-nodejs)
+[![CircleCI](https://circleci.com/gh/hongkailiu/test-nodejs.svg?style=svg)](https://circleci.com/gh/hongkailiu/test-nodejs)
 
 On [travis-ci](https://travis-ci.org/hongkailiu/test-nodejs), use [Makefile](Makefile) to test, build, etc.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.2.
 
 ## Development server
 
@@ -17,34 +18,6 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-Generate build into docs folder:
-
-```
-$ cd ./home-ng
-$ npm install
-$ npm run build-prod
-$ ng build --prod --output-path docs
-
-```
-
-Release the build to github pages:
-
-```
-$ git clone https://github.com/hongkailiu/hongkailiu.github.io.git /tmp/hongkailiu.github.io
-
-$ rm -rf /tmp/hongkailiu.github.io/*
-$ cp -r ./docs/* /tmp/hongkailiu.github.io/
-$ git -C /tmp/hongkailiu.github.io/ checkout README.md
-$ git -C /tmp/hongkailiu.github.io/ checkout CNAME
-$ git -C /tmp/hongkailiu.github.io/ add .
-### git -C /tmp/hongkailiu.github.io/ status
-$ git -C /tmp/hongkailiu.github.io/ commit -m "$(git log --oneline -1)"
-### git -C /tmp/hongkailiu.github.io/ log
-$ git -C /tmp/hongkailiu.github.io/ push
-
-```
-
 
 ## Running unit tests
 
