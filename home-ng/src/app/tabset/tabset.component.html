@@ -1,0 +1,69 @@
+<ngb-tabset>
+  <ngb-tab>
+    <ng-template ngbTabTitle>{{ 'a_home' | translate }}</ng-template>
+    <ng-template ngbTabContent>
+        <div style="padding-top: 6px;">
+          <h2>{{ 'h2_you_know' | translate }}</h2>
+          <div id="d_place">
+              <span id="s_mtl">{{ 's_mtl' | translate }}</span> &#8592;
+              <span id="s_bj">{{ 's_bj' | translate }}</span> &#8592;
+              <span id="s_dd">{{ 's_dd' | translate }}</span> &#8592;
+              <span id="s_as">{{ 's_as' | translate }}</span>
+          </div>
+          <div id="d_place_map"><a target="_blank" href="assets/i/place-map.png"><img src="assets/i/place-map.png" style="width: 66%;padding: 6px;"/></a></div>
+          <div> 
+            <a href="assets/file/resume.pdf" id="a_resume">{{ 'a_resume' | translate }}</a>,  
+            <a href="assets/file/publication.pdf" id="a_pub">{{ 'a_pub' | translate }}</a>,
+            <a href="assets/file/gpg.pub" id="a_gpg">{{ 'a_gpg' | translate }}</a>
+          </div>
+          <div> 
+            <img class="imgsocial" alt="github-icon" src="assets/i/github-icon.png"/>
+            <button type="button" class="btn btn-link btn-xs" id="btn_github" (click)="onNavigate('https://github.com/hongkailiu')">{{ 'btn_github' | translate }}</button>
+          </div>
+        </div>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab>
+    <ng-template ngbTabTitle>{{ 'a_contact' | translate }}</ng-template>
+    <ng-template ngbTabContent>
+        <div style="padding-top: 6px;">
+          <h2>{{ 'h2_w_t_f_m' | translate }}</h2>
+          <ul class="list-unstyled">
+              <li><img class="imagemail" src="assets/i/gmail.png" alt="gmail" /></li>
+              <li>
+                <img class="imgsocial" alt="qzone-icon" src="assets/i/qzone-icon.png" />
+                <button type="button" class="btn btn-link btn-xs" id="btn_qzone" (click)="onNavigate('http://23276998.qzone.qq.com')">{{ 'btn_qzone' | translate }}</button>
+              </li>
+    
+              <li>
+                <img class="imgsocial" alt="weibo-icon" src="assets/i/weibo-icon.png" />
+                <button type="button" class="btn btn-link btn-xs" id="btn_weibo" (click)="onNavigate('http://weibo.com/hongkai80')">{{ 'btn_weibo' | translate }}</button>
+              </li>
+    
+              <li>
+                <img class="imgsocial" alt="wechat-icon" src="assets/i/wechat-icon.png" />
+                <button type="button" class="btn btn-link btn-xs" id="btn_wechat" (click)="onNavigate('assets/i/wechat-hongkailiu.png')">{{ 'btn_wechat' | translate }}</button>
+              </li>
+            </ul>
+          <h2>{{ 'h2_m' | translate }}</h2>
+          <ul class="list-unstyled">
+                
+              <li>
+                <img class="imgsocial" alt="linkedin-icon" src="assets/i/linkedin-icon.png" />
+                <button type="button" class="btn btn-link btn-xs" id="btn_linkedin" (click)="onNavigate('http://ca.linkedin.com/pub/hongkai-liu/52/728/b39')">{{ 'btn_linkedin' | translate }}</button>
+              </li>
+    
+              <li>
+                <img class="imgsocial" alt="facebook-icon" src="assets/i/facebook-icon.png" />
+                <button type="button" class="btn btn-link btn-xs" id="btn_facebook" (click)="onNavigate('https://www.facebook.com/people/Hongkai-Liu/100008524840843')">{{ 'btn_facebook' | translate }}</button>
+              </li>
+    
+              <li>
+                <img class="imgsocial" alt="twitter-icon" src="assets/i/twitter-icon.png" />
+                <button type="button" class="btn btn-link btn-xs" id="btn_twitter" (click)="onNavigate('https://twitter.com/hongkailiu')">{{ 'btn_twitter' | translate }}</button>
+              </li>
+          </ul>
+        </div>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>
