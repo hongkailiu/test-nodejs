@@ -18,6 +18,7 @@ if [[ $(echo "${TRAVIS}" | awk '{print tolower($0)}') == "true" ]]; then
 fi
 
 readonly TARGET_FOLDER="/tmp/hongkailiu.github.io-${folder_suffix}/"
+echo "TARGET_FOLDER=${TARGET_FOLDER}"
 
 rm -rfv "${TARGET_FOLDER}"
 git clone https://github.com/hongkailiu/hongkailiu.github.io.git "${TARGET_FOLDER}"
