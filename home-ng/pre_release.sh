@@ -22,6 +22,7 @@ echo "TARGET_FOLDER=${TARGET_FOLDER}"
 
 rm -rfv "${TARGET_FOLDER}"
 git clone https://github.com/hongkailiu/hongkailiu.github.io.git "${TARGET_FOLDER}"
+rm -rfv "${TARGET_FOLDER}"/*
 cp -rv ./docs/* "${TARGET_FOLDER}"
 git -C "${TARGET_FOLDER}" checkout README.md
 git -C "${TARGET_FOLDER}" checkout CNAME
