@@ -11,10 +11,12 @@
               <span id="s_as">{{ 's_as' | translate }}</span>
           </div>
           <div id="d_place_map"><a target="_blank" href="assets/i/place-map.png"><img src="assets/i/place-map.png" style="width: 66%;padding: 6px;"/></a></div>
-          <div> 
-            <a href="assets/file/resume.pdf" id="a_resume">{{ 'a_resume' | translate }}</a>,  
-            <a href="assets/file/publication.pdf" id="a_pub">{{ 'a_pub' | translate }}</a>,
-            <a href="assets/file/gpg.pub" id="a_gpg">{{ 'a_gpg' | translate }}</a>
+          <div>
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href="assets/file/resume.pdf" id="a_resume">{{ 'a_resume' | translate }}</a></li>
+                  <li class="list-inline-item"><a href="assets/file/publication.pdf" id="a_pub">{{ 'a_pub' | translate }}</a></li>
+                  <li class="list-inline-item"><a href="assets/file/gpg.pub" id="a_gpg">{{ 'a_gpg' | translate }}</a></li>
+                </ul>
           </div>
           <div> 
             <img class="imgsocial" alt="github-icon" src="assets/i/github-icon.png"/>
@@ -29,7 +31,7 @@
         <div style="padding-top: 6px;">
           <h2>{{ 'h2_w_t_f_m' | translate }}</h2>
           <ul class="list-unstyled">
-              <li><img class="imagemail" src="assets/i/gmail.png" alt="gmail" /></li>
+              <li><img class="padding: 3px; border: 0;" src="assets/i/gmail.png" alt="gmail" /></li>
               <li>
                 <img class="imgsocial" alt="qzone-icon" src="assets/i/qzone-icon.png" />
                 <button type="button" class="btn btn-link btn-xs" id="btn_qzone" (click)="openBlank('http://23276998.qzone.qq.com')">{{ 'btn_qzone' | translate }}</button>
