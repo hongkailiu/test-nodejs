@@ -12,6 +12,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TabsetComponent } from './tabset/tabset.component';
 
 import {TestModule} from './test/test.module';
+import { NotFoundComponent } from './notfound/notfound.component';
 
 export function setupTranslateFactory(
   service: TranslateService): Function {
@@ -23,14 +24,16 @@ export function setupTranslateFactory(
     AppComponent,
     HomeComponent,
     TranslatePipe,
-    TabsetComponent
+    TabsetComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    TestModule
+    TestModule,
+    //https://angular.io/guide/router#module-import-order-matters
+    AppRoutingModule
   ],
   providers: [TranslateService,
     {
