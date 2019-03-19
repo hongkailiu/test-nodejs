@@ -12,15 +12,34 @@
           </div>
           <div id="d_place_map"><a target="_blank" href="assets/i/place-map.png"><img src="assets/i/place-map.png" style="width: 66%;padding: 6px;"/></a></div>
           <div>
-              <ul class="list-inline">
-                  <li class="list-inline-item"><a href="assets/file/resume.pdf" id="a_resume">{{ 'a_resume' | translate }}</a></li>
-                  <li class="list-inline-item"><a href="assets/file/publication.pdf" id="a_pub">{{ 'a_pub' | translate }}</a></li>
-                  <li class="list-inline-item"><a href="assets/file/gpg.pub" id="a_gpg">{{ 'a_gpg' | translate }}</a></li>
+              <ul class="list-unstyled">
+                  <li>
+                    <div style="padding-top: 6px;">
+                      <img class="imgsocial" alt="cv-icon" src="assets/i/cv.png" />
+                      <span style="padding-left: 13px">
+                        <a href="assets/file/resume.pdf" id="a_resume">{{ 'a_resume' | translate }}</a> and 
+                        <a href="assets/file/publication.pdf" id="a_pub">{{ 'a_pub' | translate }}</a>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div style="padding-top: 6px;">
+                      <img class="imgsocial" alt="cv-icon" src="assets/i/gpg.png" />
+                      <span style="padding-left: 13px">
+                        <a href="assets/file/gpg.pub" id="a_gpg">{{ 'a_gpg' | translate }}</a>
+                      </span>
+                    </div>
+                  </li>
+                  <li>
+                      <div style="padding-top: 6px;">
+                        <img class="imgsocial" alt="github-icon" src="assets/i/github-icon.png"/>
+                        <!--<button type="button" class="btn btn-link btn-xs" id="btn_github" (click)="openBlank('https://github.com/hongkailiu')">{{ 'btn_github' | translate }}</button>-->
+                        <span style="padding-left: 13px;">
+                          <a href="javascript:void(0);" (click)="openBlank('https://github.com/hongkailiu')">{{ 'btn_github' | translate }}</a>
+                        </span>
+                    </div>
+                  </li>
               </ul>
-          </div>
-          <div> 
-            <img class="imgsocial" alt="github-icon" src="assets/i/github-icon.png"/>
-            <button type="button" class="btn btn-link btn-xs" id="btn_github" (click)="openBlank('https://github.com/hongkailiu')">{{ 'btn_github' | translate }}</button>
           </div>
         </div>
     </ng-template>
