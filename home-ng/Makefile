@@ -7,7 +7,7 @@ test:
 ### build application
 .PHONY : build
 build:
-ifeq ($(CI), "true")
+ifeq ($${CI}, "true")
 	npm ci
 endif
 	rm -rfv ./docs
