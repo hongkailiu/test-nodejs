@@ -7,7 +7,9 @@ test:
 ### build application
 .PHONY : build
 build:
+ifeq ($(CI), "true")
 	npm ci
+endif
 	rm -rfv ./docs
 	npm run build-prod
 	ng build --prod --output-path docs
