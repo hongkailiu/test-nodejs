@@ -4,9 +4,6 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-
-
-
 folder_suffix=local
 
 if [[ $(echo "${CIRCLECI}" | awk '{print tolower($0)}') == "true" ]]; then

@@ -20,5 +20,6 @@
     "btn_linkedin": "linkedin",
     "btn_twitter": "twitter",
     "btn_facebook": "facebook",
-    "btn_github": "github"
+    "btn_github": "github",
+    "text_and": " and "
 }
