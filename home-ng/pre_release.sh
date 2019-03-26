@@ -23,6 +23,9 @@ rm -rfv "${TARGET_FOLDER}"/*
 cp -rv ./docs/* "${TARGET_FOLDER}"
 git -C "${TARGET_FOLDER}" checkout README.md
 git -C "${TARGET_FOLDER}" checkout CNAME
+git -C "${TARGET_FOLDER}" checkout Makefile
+git -C "${TARGET_FOLDER}" checkout version.json
+git -C "${TARGET_FOLDER}" checkout .travis.yml
 git -C "${TARGET_FOLDER}" add .
 readonly STATUS="$(git -C "${TARGET_FOLDER}" status)"
 echo "${STATUS}"
@@ -35,4 +38,10 @@ fi
 #$(eval COMMIT_MSG := "$(shell git log --oneline -1)")
 readonly COMMIT_MSG="$(git log --oneline -1)"
 git -C "${TARGET_FOLDER}" commit -m "${COMMIT_MSG}"
-git -C "${TARGET_FOLDER}" log -2
+
+make -C "${TARGET_FOLDER}" generate-version
+git -C "${TARGET_FOLDER}" --no-pager diff
+git -C "${TARGET_FOLDER}" add .
+git status
+git -C "${TARGET_FOLDER}" commit -m "Update version.json"
+git -C "${TARGET_FOLDER}" log -3
