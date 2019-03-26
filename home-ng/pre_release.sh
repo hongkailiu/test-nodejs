@@ -42,6 +42,6 @@ git -C "${TARGET_FOLDER}" commit -m "${COMMIT_MSG}"
 make -C "${TARGET_FOLDER}" generate-version
 git -C "${TARGET_FOLDER}" --no-pager diff
 git -C "${TARGET_FOLDER}" add .
-git status
+git -C "${TARGET_FOLDER}" status
 git -C "${TARGET_FOLDER}" commit -m "Update version.json"
 git -C "${TARGET_FOLDER}" log -3
