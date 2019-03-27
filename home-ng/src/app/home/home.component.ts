@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   divLangText = this.english;
   imgLangSrc = this.ukIcon;
-  buildLine = "Version " + BUILD_ENVIRONMENT.version + " built at " + BUILD_ENVIRONMENT.time;
+  buildLine = "v" + BUILD_ENVIRONMENT.version + " built on " + BUILD_ENVIRONMENT.time;
 
   constructor(private translate: TranslateService) { }
 
