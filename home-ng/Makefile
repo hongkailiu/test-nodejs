@@ -45,6 +45,7 @@ ifndef CIRCLECI
 	echo "CIRCLECI is not defined, existing"
 	false
 endif
+	echo "CIRCLECI: $(CIRCLECI)"
 ifeq ($(CIRCLECI), true)
 	echo "circle ci environment and continue ..."
 else
