@@ -29,10 +29,30 @@ generate-version:
 	sed -i -e "s|{buildVersion}|$(build_version)|g" ./src/app/build.environment.ts
 	sed -i -e "s|{buildTime}|$(build_time)|g" ./src/app/build.environment.ts
 
+TARGET_FOLDER := /tmp/hongkailiu.github.io-local
+
 ### checking diff before release
 .PHONY : pre-release
 pre-release:
-	./pre_release.sh
+	echo "TARGET_FOLDER: $(TARGET_FOLDER)"
+	rm -rfv "$(TARGET_FOLDER)"
+	git clone https://github.com/hongkailiu/hongkailiu.github.io.git "$(TARGET_FOLDER)"
+	rm -rfv "$(TARGET_FOLDER)"/*
+	cp -rv ./docs/* "$(TARGET_FOLDER)"
+	git -C "$(TARGET_FOLDER)" checkout README.md
+	git -C "$(TARGET_FOLDER)" checkout CNAME
+	git -C "$(TARGET_FOLDER)" checkout Makefile
+	git -C "$(TARGET_FOLDER)" checkout version.json
+	git -C "$(TARGET_FOLDER)" checkout .travis.yml
+	git -C "$(TARGET_FOLDER)" add .
+	test -n "$$(git -C "$(TARGET_FOLDER)" status -s)"
+	git -C "${TARGET_FOLDER}" commit -m "$$(git log --oneline -1)"
+	make -C "${TARGET_FOLDER}" generate-version
+	git -C "${TARGET_FOLDER}" --no-pager diff
+	git -C "${TARGET_FOLDER}" add .
+	git -C "${TARGET_FOLDER}" status
+	git -C "${TARGET_FOLDER}" commit -m "Update version.json"
+	git -C "${TARGET_FOLDER}" log -3
 
 ### release
 .PHONY : release
