@@ -10,7 +10,7 @@ Check [hliu.ca](http://www.hliu.ca/#/home) out.
 About the versions:
 
 * home version shows up at the bottom of the page.
-* github page version shows up at [version.json](http://www.hliu.ca/version.json).
+* github-pages version shows up at [version.json](http://www.hliu.ca/version.json).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.2.
 
