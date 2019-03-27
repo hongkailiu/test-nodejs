@@ -12,7 +12,7 @@ install:
 
 script:
   - make -C ./home-ng/ test build
-  - make -C ./home-ng/ pre-release
+  - make TARGET_FOLDER="/tmp/hongkailiu.github.io-${TRAVIS_JOB_NUMBER}" -C ./home-ng/ pre-release
 
 notifications:
   slack:
