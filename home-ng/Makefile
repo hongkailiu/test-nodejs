@@ -46,13 +46,13 @@ pre-release:
 	git -C "$(TARGET_FOLDER)" checkout .travis.yml
 	git -C "$(TARGET_FOLDER)" add .
 	test -n "$$(git -C "$(TARGET_FOLDER)" status -s)"
-	git -C "${TARGET_FOLDER}" commit -m "$$(git log --oneline -1)"
-	make -C "${TARGET_FOLDER}" generate-version
-	git -C "${TARGET_FOLDER}" --no-pager diff
-	git -C "${TARGET_FOLDER}" add .
-	git -C "${TARGET_FOLDER}" status
-	git -C "${TARGET_FOLDER}" commit -m "Update version.json"
-	git -C "${TARGET_FOLDER}" log -3
+	git -C "$(TARGET_FOLDER)" commit -m "$$(git log --oneline -1)"
+	make -C "$(TARGET_FOLDER)" generate-version
+	git -C "$(TARGET_FOLDER)" --no-pager diff
+	git -C "$(TARGET_FOLDER)" add .
+	git -C "$(TARGET_FOLDER)" status
+	git -C "$(TARGET_FOLDER)" commit -m "Update version.json"
+	git -C "$(TARGET_FOLDER)" log -3
 
 ### release
 .PHONY : release
