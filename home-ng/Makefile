@@ -41,7 +41,16 @@ release:
 
 .PHONY : circle-ci-install
 circle-ci-install:
-	./circle_ci_check.sh
+ifndef CIRCLECI
+	echo "CIRCLECI is not defined, existing"
+	false
+endif
+ifeq ($(CIRCLECI), true)
+	echo "circle ci environment and continue ..."
+else
+	echo "not circle ci environment, existing"
+	false
+endif
 	make --version
 	git --version
 	node --version
