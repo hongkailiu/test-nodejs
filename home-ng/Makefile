@@ -4,17 +4,30 @@ test:
 	echo "TODO"
 	#ng test
 
+.PHONY : clean
+clean:
+	rm -rfv ./docs
+
 ### build application
 .PHONY : build
-build:
+build: clean generate-version
 	echo $(CI)
 ifeq ($(CI), true)
 	npm ci
 endif
-	rm -rfv ./docs
-	npm run build-prod
 	ng build --prod --output-path docs
 	git checkout src/app/build.environment.ts
+
+build_version := $(shell git describe --tags --always --dirty)
+build_time := $(shell date +"%Y%m%d")
+
+### checking diff before release
+.PHONY : generate-version
+generate-version:
+	echo "version is $(build_version)"
+	echo "NOW is $(build_time)"
+	sed -i -e "s|{buildVersion}|$(build_version)|g" ./src/app/build.environment.ts
+	sed -i -e "s|{buildTime}|$(build_time)|g" ./src/app/build.environment.ts
 
 ### checking diff before release
 .PHONY : pre-release
