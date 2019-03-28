@@ -45,7 +45,7 @@ pre-release:
 	git -C "$(TARGET_FOLDER)" checkout version.json
 	git -C "$(TARGET_FOLDER)" checkout .travis.yml
 	git -C "$(TARGET_FOLDER)" add .
-	git -C "$(TARGET_FOLDER)" diff
+	git -C "$(TARGET_FOLDER)" status -s
 	test -n "$$(git -C "$(TARGET_FOLDER)" status -s)"
 	git -C "$(TARGET_FOLDER)" commit -m "$$(git log --oneline -1)"
 	make -C "$(TARGET_FOLDER)" generate-version
