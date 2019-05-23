@@ -53,7 +53,7 @@ pre-release:
 	git -C "$(TARGET_FOLDER)" add .
 	git -C "$(TARGET_FOLDER)" status
 	git -C "$(TARGET_FOLDER)" commit -m "Update version.json"
-	git -C "$(TARGET_FOLDER)" log -3
+	git -C "$(TARGET_FOLDER)" --no-pager log -3
 
 ### release
 .PHONY : release
