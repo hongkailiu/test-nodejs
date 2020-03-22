@@ -21,13 +21,19 @@ endif
 build_version := $(shell git describe --tags --always --dirty)
 build_time := $(shell date +"%Y%m%d")
 
+sed_cmd := sed
+uname_out := $(shell uname -s)
+ifeq ($(uname_out),Darwin)
+sed_cmd := gsed
+endif
+
 ### checking diff before release
 .PHONY : generate-version
 generate-version:
 	echo "version is $(build_version)"
 	echo "NOW is $(build_time)"
-	sed -i -e "s|{buildVersion}|$(build_version)|g" ./src/app/build.environment.ts
-	sed -i -e "s|{buildTime}|$(build_time)|g" ./src/app/build.environment.ts
+	$(sed_cmd) -i -e "s|{buildVersion}|$(build_version)|g" ./src/app/build.environment.ts
+	$(sed_cmd) -i -e "s|{buildTime}|$(build_time)|g" ./src/app/build.environment.ts
 
 TARGET_FOLDER := /tmp/hongkailiu.github.io-local
 
