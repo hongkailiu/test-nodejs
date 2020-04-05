@@ -87,7 +87,8 @@ endif
 	mkdir ./node_modules
 	### circle ci requirement
 	### https://circleci.com/docs/2.0/language-javascript/
-	sudo npm install -g @angular/cli
+	### https://stackoverflow.com/questions/56355499/stop-angular-cli-asking-for-collecting-analytics-when-i-use-ng-build
+	sudo npm install -g @angular/cli > /dev/null
 	ng --version
 	rmdir ./node_modules
 	git config --global user.name "circle-ci"
