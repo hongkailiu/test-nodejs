@@ -6,6 +6,9 @@ jobs:
     docker:
       ###https://github.com/CircleCI-Public/circleci-dockerfiles/tree/master/node/images
       - image: circleci/node:13.11.0-buster
+        environment:
+          ###https://stackoverflow.com/questions/56355499/stop-angular-cli-asking-for-collecting-analytics-when-i-use-ng-build
+          NG_CLI_ANALYTICS: ci
     steps:
       - checkout
       - run:
