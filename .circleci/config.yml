@@ -1,20 +1,11 @@
 ---
 version: 2
 jobs:
-  build-node-10:
+  build-node-13:
     working_directory: ~/my-project
     docker:
       ###https://github.com/CircleCI-Public/circleci-dockerfiles/tree/master/node/images
-      - image: circleci/node:10.15.1-jessie
-    steps:
-      - checkout
-      - run:
-          name: circle-ci-all
-          command: "make CIRCLECI=${CIRCLECI} TARGET_FOLDER=/tmp/hongkailiu.github.io-${CIRCLE_BUILD_NUM} -C ./home-ng/ circle-ci-all"
-  build-node-11:
-    working_directory: ~/my-project
-    docker:
-      - image: circleci/node:11.10.0-stretch
+      - image: circleci/node:13.11.0-buster
     steps:
       - checkout
       - run:
@@ -25,5 +16,4 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build-node-10
-      - build-node-11
+      - build-node-13
