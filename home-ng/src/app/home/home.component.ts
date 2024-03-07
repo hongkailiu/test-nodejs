@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '../translate.service';
+import {TranslateService} from '@ngx-translate/core';
 import { BUILD_ENVIRONMENT } from '../build.environment';
 
 @Component({

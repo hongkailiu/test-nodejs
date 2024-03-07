@@ -1,7 +1,7 @@
-<ngb-tabset>
-  <ngb-tab>
-    <ng-template ngbTabTitle><span class="badge badge-primary">h</span> {{ 'a_home' | translate }}</ng-template>
-    <ng-template ngbTabContent>
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+	<li [ngbNavItem]="1">
+		<button ngbNavLink><span class="badge badge-primary">h</span> {{ 'a_home' | translate }}</button>
+		<ng-template ngbNavContent>
         <div style="padding-top: 6px;">
           <h2>{{ 'h2_you_know' | translate }}</h2>
           <div id="d_place">
@@ -42,10 +42,10 @@
           </div>
         </div>
     </ng-template>
-  </ngb-tab>
-  <ngb-tab>
-    <ng-template ngbTabTitle><span class="badge badge-secondary">c</span> {{ 'a_contact' | translate }}</ng-template>
-    <ng-template ngbTabContent>
+  </li>
+  <li [ngbNavItem]="2">
+		<button ngbNavLink><span class="badge badge-secondary">c</span> {{ 'a_contact' | translate }}</button>
+		<ng-template ngbNavContent>
         <div style="padding-top: 6px;">
           <h2>{{ 'h2_w_t_f_m' | translate }}</h2>
           <ul class="list-unstyled">
@@ -84,5 +84,6 @@
           </ul>
         </div>
     </ng-template>
-  </ngb-tab>
-</ngb-tabset>
+  </li>
+</ul>
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

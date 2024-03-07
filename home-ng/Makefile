@@ -15,7 +15,7 @@ build: clean generate-version
 ifeq ($(CI), true)
 	npm ci
 endif
-	ng build --prod --output-path docs
+	ng build --configuration production --output-path docs
 	git checkout src/app/build.environment.ts
 
 build_version := $(shell git describe --tags --always --dirty)
