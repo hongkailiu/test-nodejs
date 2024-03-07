@@ -19,7 +19,7 @@ endif
 	git checkout src/app/build.environment.ts
 
 build_version := $(shell git describe --tags --always --dirty)
-build_time := $(shell date +"%Y%m%d")
+build_time := $(shell date -u +%FT%TZ)
 
 sed_cmd := sed
 uname_out := $(shell uname -s)
