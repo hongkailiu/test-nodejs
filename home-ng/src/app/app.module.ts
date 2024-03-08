@@ -14,8 +14,6 @@ import { NgbdNavBasic } from './tabset/tabset.component';
 import { TestModule } from './test/test.module';
 import { NotFoundComponent } from './notfound/notfound.component';
 import 'zone.js';
-import { Meta } from '@angular/platform-browser';
-import { BUILD_ENVIRONMENT } from './build.environment';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -47,9 +45,4 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor(private meta: Meta) {
-    meta.addTag({ name: 'build-version', content: "v" + BUILD_ENVIRONMENT.version });
-    meta.addTag({ name: 'build-at', content: BUILD_ENVIRONMENT.time });
-  }
-}
+export class AppModule {}
