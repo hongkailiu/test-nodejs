@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
-import { BUILD_ENVIRONMENT } from '../build.environment';
+
 
 @Component({
   selector: 'app-home',
@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
 
   divLangText = this.english;
   imgLangSrc = this.ukIcon;
-  buildLine = "v" + BUILD_ENVIRONMENT.version + " built at " + BUILD_ENVIRONMENT.time;
 
   constructor(private translate: TranslateService) { }
 

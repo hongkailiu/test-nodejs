@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
-import { TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { NgbdNavBasic } from './tabset/tabset.component';
@@ -14,6 +14,8 @@ import { NgbdNavBasic } from './tabset/tabset.component';
 import { TestModule } from './test/test.module';
 import { NotFoundComponent } from './notfound/notfound.component';
 import 'zone.js';
+import { Meta } from '@angular/platform-browser';
+import { BUILD_ENVIRONMENT } from './build.environment';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -35,8 +37,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
-    }
-  }),
+      }
+    }),
     NgbModule,
     NgbdNavBasic,
     TestModule,
@@ -45,4 +47,9 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private meta: Meta) {
+    meta.addTag({ name: 'build_version', content: "v" + BUILD_ENVIRONMENT.version });
+    meta.addTag({ name: 'build_at', content: BUILD_ENVIRONMENT.time });
+  }
+}
