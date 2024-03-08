@@ -49,7 +49,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 })
 export class AppModule {
   constructor(private meta: Meta) {
-    meta.addTag({ name: 'build_version', content: "v" + BUILD_ENVIRONMENT.version });
-    meta.addTag({ name: 'build_at', content: BUILD_ENVIRONMENT.time });
+    meta.addTag({ name: 'build-version', content: "v" + BUILD_ENVIRONMENT.version });
+    meta.addTag({ name: 'build-at', content: BUILD_ENVIRONMENT.time });
   }
 }
