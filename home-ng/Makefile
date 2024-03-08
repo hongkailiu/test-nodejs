@@ -16,7 +16,7 @@ ifeq ($(CI), true)
 	npm ci
 endif
 	ng build --configuration production --output-path docs
-	git checkout src/app/build.environment.ts
+	git checkout ./src/index.html
 
 build_version := $(shell git describe --tags --always --dirty)
 build_time := $(shell date -u +%FT%TZ)
@@ -32,8 +32,7 @@ endif
 generate-version:
 	echo "version is $(build_version)"
 	echo "NOW is $(build_time)"
-	$(sed_cmd) -i -e "s|{buildVersion}|$(build_version)|g" ./src/app/build.environment.ts
-	$(sed_cmd) -i -e "s|{buildTime}|$(build_time)|g" ./src/app/build.environment.ts
+	$(sed_cmd) -i -e "s|{buildVersion}|$(build_version)|g;s|{buildTime}|$(build_time)|g" ./src/index.html
 
 TARGET_FOLDER := /tmp/hongkailiu.github.io-local
 
