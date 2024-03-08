@@ -36,9 +36,7 @@
             </li>
           </ul>
         </div>
-
       </div>
-      <div id="portrait"></div>
       <div style="padding-top: 6px;">
         <h2>{{ 'h2_you_know' | translate }}</h2>
         <div id="d_place">
@@ -47,8 +45,13 @@
           <span id="s_dd">{{ 's_dd' | translate }}</span> 2002 &#8592;
           <span id="s_as">{{ 's_as' | translate }}</span>
         </div>
-        <div id="d_place_map"><a target="_blank" href="assets/i/place-map.png"><img src="assets/i/place-map.png"
-              style="width: 66%;padding: 6px;" /></a></div>
+        <div class="row">
+          <div class="col-md-8">
+            <a target="_blank" href="assets/i/place-map.png">
+              <img src="assets/i/place-map.png" style="width: 98%;padding: 6px;" />
+            </a>
+          </div>
+        </div>
       </div>
     </ng-template>
   </li>
