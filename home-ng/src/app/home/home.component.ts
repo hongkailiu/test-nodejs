@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   imgLangSrc: string
   divLangText: string
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private activatedRoute: ActivatedRoute) {
     this.selectLang('en')
   }
 
@@ -40,6 +40,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("ngOnInit")
+    this.activatedRoute.queryParams
+      .subscribe(params => {
+        const lang = params['lang']
+        if (lang != null) {
+          this.selectLang(lang)
+        }
+      }
+      );
   }
-
 }
