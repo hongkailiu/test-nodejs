@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -15,10 +15,12 @@ export class HomeComponent implements OnInit {
   ukIcon = "assets/i/uk-icon.png";
   zhIcon = "assets/i/china-icon.png";
 
-  divLangText = this.english;
-  imgLangSrc = this.ukIcon;
+  imgLangSrc: string
+  divLangText: string
 
-  constructor(private translate: TranslateService) { }
+  constructor(private translate: TranslateService) {
+    this.selectLang('en')
+  }
 
   selectLang(lang: string) {
     switch (lang) {
