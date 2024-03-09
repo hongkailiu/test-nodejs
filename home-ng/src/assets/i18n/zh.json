@@ -11,7 +11,7 @@
     "d_jt": "码农",
     "a_resume": "简历",
     "a_pub": "论文",
-    "a_gpg": "gpg.pub",
+    "a_gpg": "GPG.pub",
     "h2_w_t_f_m": "我在这里\u2026",
     "h2_m": "更多\u2026",
     "btn_qzone": "QQ空间",
@@ -20,6 +20,7 @@
     "btn_linkedin": "领英",
     "btn_twitter": "推特",
     "btn_facebook": "脸书",
-    "btn_github": "github",
-    "text_and": "和"
+    "btn_github": "GitHub",
+    "text_and": "和",
+    "text_coding": "编码为的目的是生活而生活为的是快乐"
 }
